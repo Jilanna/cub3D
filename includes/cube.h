@@ -6,12 +6,13 @@
 # include <stdlib.h>
 # include <stdarg.h>
 # include <stdio.h>
+# include <fcntl.h>
 
-typedef struct	s_map
+typedef struct	s_params
 {
 	int			save;
-    int         taillex;
-    int         tailley;
+    int         sizex;
+    int         sizey;
 	char        *no;
     char        *so;
     char        *we;
@@ -19,6 +20,17 @@ typedef struct	s_map
     char        *s;
     int         f[3];
     int         c[3];
-}				t_map;
+}				t_params;
 
 #endif
+
+/*
+R 1920 1080
+NO ./path_to_the_north_texture
+SO ./path_to_the_south_texture
+WE ./path_to_the_west_texture
+EA ./path_to_the_east_texture
+S ./path_to_the_sprite_texture
+F 220,100,0
+C 225,30,0
+*/
