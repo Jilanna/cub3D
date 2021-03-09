@@ -20,11 +20,27 @@ typedef struct	s_params
     char        *s;
     int         f[3];
     int         c[3];
+    char        **map;
 }				t_params;
 
 #endif
 
 /*
+INIT:
+params->sizex = -1;
+params->sizey = -1;
+params->no = NULL;
+params->so = NULL;
+params->we = NULL;
+params->ea = NULL;
+params->s = NULL;
+params->f[0] = -1;
+params->f[1] = -1;
+params->f[2] = -1;
+params->c[0] = -1;
+params->c[1] = -1;
+params->c[2] = -1;
+
 R 1920 1080
 NO ./path_to_the_north_texture
 SO ./path_to_the_south_texture
