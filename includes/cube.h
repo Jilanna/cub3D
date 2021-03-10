@@ -1,6 +1,17 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   cube.h                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: nvu <nvu@student.42lyon.fr>                +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/03/10 09:22:16 by nvu               #+#    #+#             */
+/*   Updated: 2021/03/10 09:33:25 by nvu              ###   ########lyon.fr   */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef CUBE_H
 # define CUBE_H
-
 # include <stddef.h>
 # include <unistd.h>
 # include <stdlib.h>
@@ -22,6 +33,12 @@ typedef struct	s_params
     int         c[3];
     char        **map;
 }				t_params;
+
+typedef struct		s_list
+{
+	void			*content;
+	struct s_list	*next;
+}					t_list;
 
 #endif
 

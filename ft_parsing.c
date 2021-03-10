@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_parsing.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: nvu <nvu@student.42lyon.fr>                +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/03/10 09:21:17 by nvu               #+#    #+#             */
+/*   Updated: 2021/03/10 09:21:27 by nvu              ###   ########lyon.fr   */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "cube.h"
 #include "libft.h"
 
@@ -73,6 +85,7 @@ int parse_params(int fd, t_params *params)
             continue ;
         else
             break ;
+        free(line);
     }
     out = are_params_right(params);
     return (out);

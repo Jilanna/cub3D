@@ -3,15 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nvu <marvin@42.fr>                         +#+  +:+       +#+        */
+/*   By: nvu <nvu@student.42lyon.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/27 15:25:42 by nvu               #+#    #+#             */
-/*   Updated: 2020/11/27 16:04:47 by nvu              ###   ########lyon.fr   */
+/*   Created: 2021/03/10 09:26:29 by nvu               #+#    #+#             */
+/*   Updated: 2021/03/10 09:26:31 by nvu              ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdlib.h>
 
 t_list		*ft_lstnew(void *content)
 {

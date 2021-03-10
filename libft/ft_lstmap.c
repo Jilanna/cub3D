@@ -3,16 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nvu <marvin@42.fr>                         +#+  +:+       +#+        */
+/*   By: nvu <nvu@student.42lyon.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/27 17:04:40 by nvu               #+#    #+#             */
-/*   Updated: 2020/12/11 12:52:23 by nvu              ###   ########lyon.fr   */
+/*   Created: 2021/03/10 09:26:39 by nvu               #+#    #+#             */
+/*   Updated: 2021/03/10 09:26:40 by nvu              ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdlib.h>
-#include <stdio.h>
 
 static int		ft_lstpush_back(t_list *begin, void *content)
 {

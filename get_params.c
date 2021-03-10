@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   get_params.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: nvu <nvu@student.42lyon.fr>                +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/03/10 09:25:03 by nvu               #+#    #+#             */
+/*   Updated: 2021/03/10 09:25:06 by nvu              ###   ########lyon.fr   */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "cube.h"
 #include "libft.h"
 
@@ -5,6 +17,7 @@ char    *is_path_right(char *line)
 {
     int     len;
     char    *path;
+    int     i;
 
     len = ft_strlen(line);
     if (len < 4)
@@ -15,10 +28,10 @@ char    *is_path_right(char *line)
     (line[0] == 'E' && line[1] == 'A' && line[2] == ' ') ||
     (line[0] == 'S' && line[1] == ' ')))
         return (NULL);
-    if (line[0] == 'S' && line[1] == ' ')
-        path = ft_substr(line, 3, len);
-    else
-        path = ft_substr(line, 4, len);
+    i = 2;
+    while (line[i] == ' ')
+        i++;
+    path = ft_substr(line, i, len);
     len = open(path, O_RDONLY);
     if (len == -1)
         return (NULL);
@@ -82,14 +95,17 @@ int get_resolution(char *line, t_params *params)
         return (-1);
     if (line[1] != ' ')
         return (-1);
-    i = 3;
+    i = 1;
+    while (line[i] == ' ')
+        i++;
     temp = get_size(line, &i, len);
     if (temp == -1 || params->sizex != -1)
         return (-1);
     params->sizex = temp;
     if (line[i] != ' ')
         return(-1);
-    i++;
+    while (line[i] == ' ')
+        i++;
     temp = get_size(line, &i, len);
     if (temp == -1 || params->sizey != -1)
         return (-1);
@@ -103,10 +119,12 @@ int get_color(char *line, int *rgb)
     int i;
     int len;
 
-    if (line[1] != ' ')
+    i = 1;
+    if (line[i] != ' ')
         return (-1);
+    while (line[i] == ' ')
+        i++;
     len = ft_strlen(line);
-    i = 2;
     temp = get_size(line, &i, len);
     if (temp < 0 || temp > 255 || rgb[0] != -1)
         return (-1);
