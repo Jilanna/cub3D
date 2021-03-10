@@ -73,8 +73,4 @@ int parse_map(int fd, t_params *params)
     begin = put_map_chain(fd);
     hight = ft_lstsize(begin);
     width = ft_lst_lenmax(begin);
-    
-
-
-
 }

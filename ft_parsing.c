@@ -110,6 +110,5 @@ int ft_parsing(int ac, char **av)
         return (-1);
     out = parse_params(fd, params);
     out = parse_map(fd, params);
-    
     return (0);
 }
