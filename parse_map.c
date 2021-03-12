@@ -49,7 +49,7 @@ int		ft_lst_lenmax(t_list *lst)
 
     len_max = 0;
 	if (!lst)
-		return ;
+		return (0);
 	while (lst->next)
 	{
         len = ft_strlen(lst->content);
@@ -63,14 +63,36 @@ int		ft_lst_lenmax(t_list *lst)
     return (len_max);
 }
 
+int put_map_tab(t_params *params, int hight, int width, t_list *lst)
+{
+    int i;
+    int j;
+
+    params->map = malloc(sizeof(char*) * hight);
+    if (params->map == NULL)
+        return (-1);
+    i = 0;
+    while (i <= hight)
+    {
+        params->map[i] = malloc(sizeof(char) * (width + 1));
+        if (params->map[i] == NULL)
+            return (-1);
+        j = -1;
+        while (lst->content[++j] != '\0')
+            params->map[i][j] = lst->content[j];
+        params->map[i][j] = '\0';
+        lst = lst->next;
+        i++;
+    }
+    return (0);
+}
+
 int parse_map(int fd, t_params *params)
 {
     t_list  *begin;
-    int     hight;
-    int     width;
-
+    int     out;
 
     begin = put_map_chain(fd);
-    hight = ft_lstsize(begin);
-    width = ft_lst_lenmax(begin);
+    out = put_map_tab(params, ft_lstsize(begin), ft_lst_lenmax(begin), begin);
+    printf("%p", begin);
 }

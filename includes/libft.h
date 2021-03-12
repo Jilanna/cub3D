@@ -17,7 +17,7 @@
 
 typedef struct		s_list
 {
-	void			*content;
+	char			*content;
 	struct s_list	*next;
 }					t_list;
 
@@ -27,5 +27,6 @@ int		ft_strcmp(const char *s1, const char *s2);
 char	*ft_strdup(char *src);
 char	*ft_substr(char const *s, int start, int len);
 int	    get_next_line(int fd, char **line);
+int		ft_lstsize(t_list *lst);
 
 #endif
