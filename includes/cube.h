@@ -34,6 +34,7 @@ typedef struct	s_params
     char        **map;
     int         hight;
     int         width;
+    char        perso;
 }				t_params;
 
 typedef struct		s_list

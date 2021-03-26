@@ -109,6 +109,9 @@ int test_map(t_params *params)
 {
     int out;
 
+	out = test_map_basic(params, params->map, params->hight, params->width);
+    if (out == -1)
+        return (-1);
     out = test_up(params->map, params->hight, params->width);
     if (out == -1)
         return (-1);
