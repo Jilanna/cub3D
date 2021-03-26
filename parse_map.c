@@ -115,5 +115,8 @@ int parse_map(int fd, t_params *params)
     params->hight = ft_lstsize(begin);
     params->width = ft_lst_lenmax(begin);
     out = put_map_tab(params, params->hight, params->width, begin);
-    printf("%p", begin);
+    if (out == -1)
+        return (-1);
+    out = test_map(params);
+    return (out);
 }
