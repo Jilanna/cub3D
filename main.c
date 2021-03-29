@@ -14,8 +14,14 @@
 
 int main(int ac, char **av)
 {
-    int     out;
+    t_params    *params;
+    int         out;
 
-    out = ft_parsing(ac, av);
+    params = ft_parsing(ac, av);
+    if (params == NULL)
+        return (-1);
+    out = ft_display(params);
+    if (out == -1)
+        return (-1);
     return (0);
 }

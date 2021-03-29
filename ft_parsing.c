@@ -91,7 +91,7 @@ int parse_params(int fd, t_params *params)
     return (out);
 }
 
-int ft_parsing(int ac, char **av)
+t_params    *ft_parsing(int ac, char **av)
 {
     t_params   *params;
     int         fd;
@@ -99,16 +99,16 @@ int ft_parsing(int ac, char **av)
 
     fd = test_input(ac, av);
     if (fd == -1)
-        return (-1);
+        return (NULL);
     params = init_params();
     if (params == NULL)
-        return (-1);
+        return (NULL);
     if (ac >= 3 && ft_strcmp("--save", av[2]) == 0)
         params->save = 1;
     fd = open(av[1], O_RDONLY);
     if (fd == -1)
-        return (-1);
+        return (NULL);
     out = parse_params(fd, params);
     out = parse_map(fd, params);
-    return (0);
+    return (params);
 }
