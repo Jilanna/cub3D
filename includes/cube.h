@@ -18,7 +18,7 @@
 # include <stdarg.h>
 # include <stdio.h>
 # include <fcntl.h>
-# include "mlx.h"
+# include <mlx.h>
 
 typedef struct	s_params
 {
@@ -36,6 +36,8 @@ typedef struct	s_params
     int         hight;
     int         width;
     char        perso;
+    void        *mlx_ptr;
+    void        *win_ptr;
 }				t_params;
 
 typedef struct		s_list
