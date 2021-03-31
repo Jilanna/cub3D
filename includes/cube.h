@@ -36,6 +36,8 @@ typedef struct	s_params
     int         hight;
     int         width;
     char        perso;
+    int         posx;
+    int         posy;
     void        *mlx_ptr;
     void        *win_ptr;
 }				t_params;

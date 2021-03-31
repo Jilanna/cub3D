@@ -12,6 +12,11 @@ int ft_open_mlx(t_params *p)
     return (0);
 }
 
+int ft_display_player(t_params *params)
+{
+    mlx_pixel_put (p->mlx_ptr, p->win_ptr, int x, int y, int color );
+}
+
 int ft_display(t_params *params)
 {
     int out;
@@ -19,5 +24,6 @@ int ft_display(t_params *params)
     out = ft_open_mlx(params);
     if (out == -1)
         return (-1);
+    ft_display_player(params);
     return(out);
 }
