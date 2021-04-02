@@ -14,7 +14,7 @@ int ft_open_mlx(t_params *p)
 
 int ft_display_player(t_params *params)
 {
-    mlx_pixel_put (p->mlx_ptr, p->win_ptr, int x, int y, int color );
+    mlx_put_image_to_window(game->mlx, game->win, game->img.img, 0, 0);
 }
 
 int ft_display(t_params *params)

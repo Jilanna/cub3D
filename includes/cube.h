@@ -40,6 +40,7 @@ typedef struct	s_params
     int         posy;
     void        *mlx_ptr;
     void        *win_ptr;
+    t_img       img;
 }				t_params;
 
 typedef struct		s_list
@@ -47,6 +48,15 @@ typedef struct		s_list
 	char			*content;
 	struct s_list	*next;
 }					t_list;
+
+typedef struct	s_img
+{
+	void	    *img_ptr;
+	int		    *data;
+	int		    lenght;
+	int		    bpp;
+	int		    endian;
+}				t_img;
 
 #endif
 
