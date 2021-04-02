@@ -10,8 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cube.h"
-#include "libft.h"
+#include "../includes/cube.h"
+#include "../includes/libft.h"
 
 t_params    *init_params(void)
 {

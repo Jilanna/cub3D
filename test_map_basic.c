@@ -1,5 +1,5 @@
-#include "cube.h"
-#include "libft.h"
+#include "../includes/cube.h"
+#include "../includes/libft.h"
 
 int test_map_basic(t_params *params, char **mappy, int hi, int wi)
 {

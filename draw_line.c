@@ -1,5 +1,5 @@
-#include "cube.h"
-#include "libft.h"
+#include "../includes/cube.h"
+#include "../includes/libft.h"
 
 void	draw_line(t_params *p, double xa, double ya, double xb, double yb)
 {

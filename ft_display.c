@@ -1,5 +1,5 @@
-#include "cube.h"
-#include "libft.h"
+#include "../includes/cube.h"
+#include "../includes/libft.h"
 
 int ft_init_mlx(t_params *p)
 {
