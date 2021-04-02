@@ -20,6 +20,15 @@
 # include <fcntl.h>
 # include <mlx.h>
 
+typedef struct	s_img
+{
+	void	    *img_ptr;
+	int		    *data;
+	int		    lenght;
+	int		    bpp;
+	int		    endian;
+}				t_img;
+
 typedef struct	s_params
 {
 	int			save;
@@ -48,15 +57,6 @@ typedef struct		s_list
 	char			*content;
 	struct s_list	*next;
 }					t_list;
-
-typedef struct	s_img
-{
-	void	    *img_ptr;
-	int		    *data;
-	int		    lenght;
-	int		    bpp;
-	int		    endian;
-}				t_img;
 
 #endif
 
