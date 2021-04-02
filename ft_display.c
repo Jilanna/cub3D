@@ -9,7 +9,7 @@ int ft_init_mlx(t_params *p)
     p->mlx_ptr = mlx_init();
     if (p->mlx_ptr == NULL)
         return (-1);
-    p->win_ptr = mlx_new_window(p->mlx_ptr, p->sizex, p->sizey, "JI");
+    p->win_ptr = mlx_new_window(p->mlx_ptr, p->sizex, p->sizey, "Incroyable");
     if (p->win_ptr == NULL)
         return (-1);
     p->img->img_ptr = mlx_new_image(p->mlx, p->sizex, p->sizey);

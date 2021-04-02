@@ -18,6 +18,7 @@
 # include <stdarg.h>
 # include <stdio.h>
 # include <fcntl.h>
+# include <math.h>
 # include <mlx.h>
 
 typedef struct	s_img
