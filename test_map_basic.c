@@ -7,7 +7,7 @@ int test_map_basic(t_params *params, char **mappy, int hi, int wi)
     int j;
 
     i = 0;
-    params->perso = '0';
+    params->dirx = -2;
     while (i < hi)
     {
         j = 0;
@@ -17,7 +17,7 @@ int test_map_basic(t_params *params, char **mappy, int hi, int wi)
             || mappy[i][j] == '1' || mappy[i][j] == '2')
                 j++;
             else if ((mappy[i][j] == 'N' || mappy[i][j] == 'E'
-            || mappy[i][j] == 'S' || mappy[i][j] == 'W') && params->perso == '0')
+            || mappy[i][j] == 'S' || mappy[i][j] == 'W') && params->dirx == -2)
             {
                 get_position(params, mappy[i][j], j, i);
                 j++;
@@ -32,7 +32,26 @@ int test_map_basic(t_params *params, char **mappy, int hi, int wi)
 
 void    get_position(t_params *params, char position, int x, int y)
 {
-    params->perso = position;
-    params->posx = x;
-    params->posy = y;
+    params->posx = (double)x;
+    params->posy = (double)y;
+    if (position == 'N')
+    {
+        params->dirx = 0;
+        params->diry = 1;
+    }
+    else if (position == 'E')
+    {
+        params->dirx = 1;
+        params->diry = 0;
+    }
+    else if (position == 'S')
+    {
+        params->dirx = 0;
+        params->diry = -1;
+    }
+    else
+    {
+        params->dirx = -1;
+        params->diry = 0;
+    }
 }

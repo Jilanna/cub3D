@@ -45,9 +45,12 @@ typedef struct	s_params
     char        **map;
     int         hight;
     int         width;
-    char        perso;
-    int         posx;
-    int         posy;
+    double      posx;
+    double      posy;
+    double      dirx;
+    double      diry;
+    double      planex;
+    double      planey;
     void        *mlx_ptr;
     void        *win_ptr;
     t_img       img;

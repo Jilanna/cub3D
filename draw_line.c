@@ -34,7 +34,7 @@ void	draw_line(t_params *p, double xa, double ya, double xb, double yb)
 	dy /= step;
 	while (fabs(xb - xa) > 0.01 || fabs(yb - ya) > 0.01)
 	{
-		p->img.data[rounding(p, xa, ya)] = 0xb3b3b3;
+		p->img.data[rounding(p, xa, ya)] = 0x7f7f7f;
 		xa += dx;
 		ya += dy;
 	}
