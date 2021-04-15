@@ -54,4 +54,19 @@ void    get_position(t_params *params, char position, int x, int y)
         params->dirx = -1;
         params->diry = 0;
     }
+    get_plane(params);
+}
+
+void    get_plane(t_params *params)
+{
+    if (params->dirx == 0)
+    {
+        params->planex = 0.6;
+        params->planey = 0;
+    }
+    else
+    {
+        params->planex = 0;
+        params->planey = 0.6;
+    }
 }
