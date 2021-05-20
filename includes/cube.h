@@ -56,6 +56,17 @@ typedef struct	s_params
     double      camerax;
     double      raydirx;
     double      raydiry;
+    int         mapx;
+    int         mapy;
+    double      sidedistx;
+    double      sidedisty;
+    double      deltadistx;
+    double      deltadisty;
+    double      perpwalldist;
+    int         stepx;
+    int         stepy;
+    int         hit;
+    int         side;
     t_img       img;
 }				t_params;
 

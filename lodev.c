@@ -16,65 +16,65 @@ void    lodev(t_params *p)
       p->raydiry = p->diry + p->planey * p->camerax;
 
       //which box of the map we're in
-      int mapx = int(p->posx);
-      int mapy = int(p->posy);
+      p->mapx = int(p->posx);
+      p->mapy = int(p->posy);
 
       //length of ray from current position to next x or y-side
-      double sideDistX;
-      double sideDistY;
+      //double sideDistX;
+      //double sideDistY;
 
       //length of ray from one x or y-side to next x or y-side
       p->deltadistx = std::abs(1 / p->raydirx);
       p->deltadisty = std::abs(1 / p->raydiry);
-      double perpWallDist;
+      //double perpWallDist;
 
       //what direction to step in x or y-direction (either +1 or -1)
-      int stepX;
-      int stepY;
+      //int stepX;
+      //int stepY;
 
-      int hit = 0; //was there a wall hit?
-      int side; //was a NS or a EW wall hit?
+      p->hit = 0; //was there a wall hit?
+      //int side; //was a NS or a EW wall hit?
 
       //calculate step and initial sideDist
       if(p->raydirx < 0)
       {
-        stepX = -1;
-        sidedistx = (p->posx - mapX) * deltaDistX;
+        p->stepX = -1;
+        p->sidedistx = (p->posx - p->mapx) * p->deltadistx;
       }
       else
       {
-        stepX = 1;
-        sideDistX = (mapX + 1.0 - posX) * deltaDistX;
+        p->stepx = 1;
+        p->sidedistx = (p->mapx + 1.0 - p->posx) * p->deltadistx;
       }
-      if(rayDirY < 0)
+      if(p->raydiry < 0)
       {
-        stepY = -1;
-        sideDistY = (posY - mapY) * deltaDistY;
+        p->stepy = -1;
+        p->sidedisty = (p->posy - p->mapy) * p->deltadisty;
       }
       else
       {
-        stepY = 1;
-        sideDistY = (mapY + 1.0 - posY) * deltaDistY;
+        p->stepy = 1;
+        p->sidedisty = (p->mapy + 1.0 - p->posy) * p->deltadisty;
       }
       //perform DDA
-      while (hit == 0)
+      while (p->hit == 0)
       {
         //jump to next map square, OR in x-direction, OR in y-direction
-        if(sideDistX < sideDistY)
+        if(p->sidedistx < p->sidedisty)
         {
-          sideDistX += deltaDistX;
-          mapX += stepX;
-          side = 0;
+          p->sidedistx += p->deltadistx;
+          p->mapx += p->stepx;
+          p->side = 0;
         }
         else
         {
-          sideDistY += deltaDistY;
-          mapY += stepY;
-          side = 1;
+          p->sidedisty += p->deltadisty;
+          p->mapy += p->stepy;
+          p->side = 1;
         }
         //Check if ray has hit a wall
         if(p->map[p->mapx][p->mapy] > 0)
-            hit = 1;
+            p->hit = 1;
       }
 
       //Calculate distance of perpendicular ray (Euclidean distance will give fisheye effect!)
