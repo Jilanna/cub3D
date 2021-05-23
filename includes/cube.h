@@ -67,6 +67,9 @@ typedef struct	s_params
     int         stepy;
     int         hit;
     int         side;
+    int         lineheight;
+    int         drawstart;
+    int         drawend;
     t_img       img;
 }				t_params;
 
